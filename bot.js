@@ -18,7 +18,7 @@ const API_BASE = process.env.API_BASE || 'https://api.staticgram.top';
 const MINIAPP_URL = process.env.MINIAPP_URL || '';
 const ADMIN_IDS = (process.env.ADMIN_IDS || '').split(',').map(s => s.trim()).filter(Boolean);
 const NOTIFY_SECRET = process.env.NOTIFY_SECRET || '';
-const PORT = +(process.env.PORT || 3000);
+const PORT = +(process.env.PORT || 0000);
 const NAME = 'Orenix Game';
 const SUPABASE_URL = (process.env.SUPABASE_URL || '').replace(/\/$/, '');
 const SB_KEY = process.env.SUPABASE_SERVICE_KEY || '';          // секретный ключ (service_role / sb_secret_...), ТОЛЬКО на сервере
