@@ -18,7 +18,7 @@ const API_BASE = process.env.API_BASE || 'https://api.staticgram.top';
 const MINIAPP_URL = process.env.MINIAPP_URL || '';
 const ADMIN_IDS = (process.env.ADMIN_IDS || '').split(',').map(s => s.trim()).filter(Boolean);
 const NOTIFY_SECRET = process.env.NOTIFY_SECRET || '';
-const PORT = +(process.env.PORT || 0000);
+const PORT = +(process.env.PORT || 3000);
 const NAME = 'Orenix Game';
 const SUPABASE_URL = (process.env.SUPABASE_URL || '').replace(/\/$/, '');
 const SB_KEY = process.env.SUPABASE_SERVICE_KEY || '';          // секретный ключ (service_role / sb_secret_...), ТОЛЬКО на сервере
@@ -198,6 +198,6 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(PORT, '127.0.0.1', () => console.log(`${NAME}: HTTP на 127.0.0.1:${PORT}`));
+server.listen(PORT, '0.0.0.0', () => console.log(`${NAME}: HTTP на 127.0.0.1:${PORT}`));
 api('getMe').then(me => console.log('Бот:', me.username || me)).catch(e => console.error(e.message));
 poll();
